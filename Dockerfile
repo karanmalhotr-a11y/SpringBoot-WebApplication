@@ -8,7 +8,5 @@ WORKDIR /app
 
 COPY /target/spring-boot-web.jar /app
 
-EXPOSE 8080
-
 # This should not be changed
 CMD ["java","-jar","spring-boot-web.jar"]
