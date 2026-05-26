@@ -1,13 +1,14 @@
 # You can change this base image to anything else
 # But make sure to use the correct version of Java
-FROM adoptopenjdk/openjdk11:alpine-jre
+FROM openjdk:11-jre-apline
 
-# Simply the artifact path
-ARG artifact=target/spring-boot-web.jar
+RUN apk update && apk add bash
 
-WORKDIR /opt/app
+WORKDIR /app
 
-COPY ${artifact} app.jar
+COPY /target/spring-boot-web.jar /app
+
+EXPOSE 8080
 
 # This should not be changed
-ENTRYPOINT ["java","-jar","app.jar"]
+CMD ["java","-jar","spring-boot-web.jar"]
