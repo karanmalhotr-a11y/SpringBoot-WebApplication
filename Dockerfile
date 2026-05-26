@@ -2,11 +2,10 @@
 # But make sure to use the correct version of Java
 FROM eclipse-temurin:11-jre-alpine
 
-RUN apk update && apk add bash
-
 WORKDIR /app
 
 COPY /target/spring-boot-web.jar /app
+#build name from pom file
 
 # This should not be changed
 CMD ["java","-jar","spring-boot-web.jar"]
