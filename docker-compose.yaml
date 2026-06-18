@@ -2,7 +2,7 @@ version: '3.8'
 services:
   springboot-app:
     build:
-      context: ./app
+      context: .
       dockerfile: Dockerfile
     image: karanmalhotra17/kmjenkins:tagkm   # tag it for push later
     ports:
